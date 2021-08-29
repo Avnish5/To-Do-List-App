@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasks</title>
+    <link rel="stylesheet" href="/css/task.css">
+</head>
+<body>
+    
+    <!--main div-->
+    <div class="main flex">
+       
+        <!--div container for the to do list -->
+        <div class="container">
+            <a href="/home"><i  class="fas fa-arrow-circle-left back"></i></a>
+            <!--div for the to do app contents-->
+        <div class="app">
+            
+            <!--div for the heading -->
+            <div class="heading common-border">
+                
+                <h3>TODO APP</h3>
+
+            </div>
+            <!--div for adding the new tasks-->
+            <div class="task-details">
+                <!--form to collect the data-->
+                <form method="POST" action="/create-task">
+
+                   <div class="discription common-border common-padding">
+                       <p>Description</p>
+                       <input  type="text" name="discription" placeholder="What do you need to do">
+                   </div>
+
+                   <div class="category-due common-border ">
+
+                       <div class="category  common-padding">
+                           <p>Category</p>
+                           <select name="category">
+                            <option value="Work">Work</option>
+                            <option value="Personnel">Personnel</option>
+                            <option value="Home">Home</option>
+                            <option value="School">School</option>
+                            <option value="School">Grocery</option>
+                            <option value="School">Bills</option>
+                          </select>
+                       </div>
+
+                       <div class="due common-padding">
+                           <p>Due Date</p>
+                        <input type="date"  name="duedate">
+                       </div>
+
+                   </div>
+
+                   <div class="cre-del flex common-border">  
+                        <button type="submit"><i class="fas fa-plus"></i> ADD TASK  </button>
+                       <!--- <button> <i class="far fa-trash-alt"></i> DELETE TASK </button> -->
+                </div>
+
+                </form>
+            </div>
+
+            
+            <!--div for displaying the added taks-->
+            <div class="tasks">
+                <ul>
+                   <%for(let i of taski){%>
+                    <li class="common-border" >
+
+                        <div class="special">
+                            <div class="checkbox flex">
+                                <input  id="check"   type="checkbox"  name="task">
+                            </div>
+    
+                            <div  class="checkbox-info  ">
+                        <h4><%=i.description%></h4>
+                        <p style="margin-bottom:0.5rem;">Category:<%=i.category%></p>
+                        <p><i style="margin-right:0.5rem;" class="far fa-calendar"></i><%=i.date%></p>
+                       </div>
+                        </div>
+                   <a id="link" href="/delete?id=<%=i._id%>"><i  class="fas fa-trash delete"></i></a>
+
+                  
+                </li>
+
+               
+                    <%}%>
+ </ul>
+            </div>
+
+        </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="/js/task.js"></script>
+<script src="https://kit.fontawesome.com/8568d6c21e.js" crossorigin="anonymous"></script>
+
+</body>
+</html>

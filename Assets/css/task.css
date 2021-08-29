@@ -1,0 +1,224 @@
+
+/*import the google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;1,100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital@1&family=Poppins:ital,wght@0,300;1,100&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+.back{
+    color:white;
+    font-size: 2rem;
+    text-align: center;
+    padding-bottom:1rem;
+    cursor: pointer;
+
+}
+
+body{
+    background-image: url('https://images.unsplash.com/photo-1519681393784-d120267933ba?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1124&q=100');
+    background-position: center;   
+}
+
+/* common classes:-> .flex,.common-border,.common-padding */
+.flex{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.common-border{
+    border-bottom: 1px solid grey;
+}
+
+.common-padding{
+    padding:1rem;
+}
+
+/* div with class name="main" */
+.main{
+    width:100%;
+    height:100vh;
+}
+
+/* div with class name="app" */
+.app{
+    height:90vh;
+    width:90vw;
+    display:grid;
+    grid-template-rows: 10% 40% 50%;
+    backdrop-filter: blur(8px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(255, 255, 255, 0.75);
+    border-radius: 12px;
+    border: 1px solid rgba(209, 213, 219, 0.3);
+}
+/* child div with class name="heading" of div with class name="app" */
+
+.heading h3{
+    text-align: center;
+    padding-top:1rem;
+    
+    font-family: 'Noto Sans', sans-serif;
+    word-spacing:1rem;
+    letter-spacing: 0.4rem;   
+}
+
+.heading{
+   text-align: center;
+   font-family: sans-serif;
+    width:auto;
+}
+
+/* div with class name="task-details  */
+
+.task-details p{
+    font-family: 'Poppins', sans-serif;
+    font-weight:normal;
+    font-size: 1.5rem;
+}
+
+.task-details input{
+    width:75%;
+}
+
+.task-details select{
+    width:75%;
+}
+
+.task-details input,select{
+    outline:none;
+    border:transparent;
+    background: transparent;
+    
+}
+/*  div with class name="category-due */
+.category-due{
+    display: grid;
+    grid-template-columns:auto auto;
+}
+
+.due{
+    border-left:2px solid grey;
+}
+
+/*div with class name="cre-del" and its childs */
+.cre-del{
+    padding:1rem;
+}
+.cre-del button{
+    outline:none;
+    border:transparent;
+    margin-left:1rem;
+    padding:1rem;
+    text-align: center;
+    font-size:0.8rem;
+    color:white;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+ border-radius: 10px;
+
+}
+
+.cre-del button:nth-child(1){
+    background-color:black;
+}
+
+.cre-del button:nth-child(2){
+    background-color:red;
+}
+
+/* div with class name="tasks" and its childerns  */
+
+.tasks{
+   
+    overflow-y:scroll;
+  
+}
+
+.tasks ul li{
+    display:flex;
+    padding:0 1rem;
+    align-items: center;
+    justify-content: space-between; 
+}
+.tasks ul  li h4{
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 1rem;
+    
+}
+.tasks ul  li p{
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.tasks ul  li div{
+    padding:1rem;
+}
+
+.checkbox input{
+    height:1.5rem;
+    width:1.5rem;
+}
+.checkbox-info{
+    display:flex;
+    flex-direction: column;
+}
+
+
+.checkbox-info h4{
+    margin-bottom:0.8rem;
+  
+}
+
+.special{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.delete {
+    font-size:1.5rem; 
+    color:black;
+    cursor: pointer;
+}
+/* custom scroll bar for tasks div */
+.tasks::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+.tasks::-webkit-scrollbar-track {
+    background-color: white;
+    border-radius: 10px;
+}
+.tasks::-webkit-scrollbar-thumb {
+    background-image: linear-gradient(
+        127deg
+        ,#a759d1 0%, #8261ee 91%);
+    border-radius: 10px;
+}
+
+/* .tasks::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+.tasks::-webkit-scrollbar-track {
+    background-color: white;
+    border-radius: 10px;
+}
+.tasks::-webkit-scrollbar-thumb {
+    background-color:black;
+    border-radius: 10px;
+} */
+
+
+
+
+
+
+
+
+
+
